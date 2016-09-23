@@ -11,6 +11,12 @@ Math provides fast square rooting
 Decimal gives the Decimal data type which is much better than Float
 sys is needed to set the depth for recursion.
 """
+
+"""
+IMPORTANT: THIS SCRIPT IS COPIED FROM https://github.com/geekpradd/PythonPi
+FOR REFERENCE.
+"""
+
 from __future__ import print_function
 import math, sys
 from decimal import *
@@ -38,7 +44,7 @@ def getIteratedValue(k):
 	Return the Iterations as given in the Chudnovsky Algorithm.
 	k iterations gives k-1 decimal places.. Since we need k decimal places
 	make iterations equal to k+1
-	
+
 	Parameters:
 	k  -- Number of Decimal Digits to get
 	"""
@@ -48,8 +54,8 @@ def getIteratedValue(k):
 	for k in range(k):
 		first = factorial(6*k)*(13591409+545140134*k)
 		down = factorial(3*k)*(factorial(k))**3*(640320**(3*k))
-		sum += first/down 
-	return Decimal(sum) 
+		sum += first/down
+	return Decimal(sum)
 
 def getValueOfPi(k):
 	"""
@@ -61,8 +67,8 @@ def getValueOfPi(k):
 	"""
 	iter = getIteratedValue(k)
 	up = 426880*math.sqrt(10005)
-	pi = Decimal(up)/iter 
-	
+	pi = Decimal(up)/iter
+
 	return pi
 
 def shell():
